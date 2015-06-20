@@ -2,26 +2,25 @@
 
 ## Coursera - R Programming
 
-#Please follow the set of instructions to test this assignment
-#Remeber the solve function will work for only square matrix which is iversible
+Please follow the set of instructions to test this assignment
+Remeber the solve function will work for only square matrix which is 
+reversible
 
-#Lines starting 
-  # are simple comments, 
-  > are commands to execute
-output just printed without any prefix
+Lines starting   
+  > are commands to execute 
 
-#1) Load the R files
+1) Load the R files
 
 > source("c:/directory/path/you/downloaded/cachematrix.R") 
 
 
 
-#2) call makeCacheMatrix to create the matrix
+2) call makeCacheMatrix to create the matrix
 
 
 > a <- makeCacheMatrix( matrix(c(1,2,3,4), nrow = 2, ncol = 2) )
 
-#3) execute summary(a)
+3) execute summary(a)
 
 > summary(a);
                 Length Class  Mode    
@@ -31,7 +30,7 @@ setCacheInverse 1      -none- function
 getInverse      1      -none- function
 
 
-#4)  print the matrix
+4)  print the matrix
 
 > a$getMatrix();
 
@@ -39,7 +38,7 @@ getInverse      1      -none- function
 [1,]    1    3
 [2,]    2    4
 
-#4) Cache the inverse
+4) Cache the inverse
 
 > cacheSolve(a)
      [,1] [,2]
@@ -47,8 +46,8 @@ getInverse      1      -none- function
 [2,]    1 -0.5
 
 
-#5) reexecute cacheSolve(a),  note the printed message proves the value is
-#returned from rpeviously cachaed value
+5) reexecute cacheSolve(a),  note the printed message proves the value is
+returned from previously cached value
 
 > cacheSolve(a)
 cached value available and hence getting cached data
@@ -57,26 +56,33 @@ cached value available and hence getting cached data
 [2,]    1 -0.5
 
 
-#6) You can try for 3x3 square matrix as well
+6) You can try for 3x3 square matrix as well
 
 > a <- makeCacheMatrix( matrix(c(2,2,2,1,0,0,0,0,1), nrow = 3, ncol = 3) );
+
 > summary(a);
+
                 Length Class  Mode    
 setMatrix       1      -none- function
 getMatrix       1      -none- function
 setCacheInverse 1      -none- function
 getInverse      1      -none- function
+
 > a$getMatrix();
+
      [,1] [,2] [,3]
 [1,]    2    1    0
 [2,]    2    0    0
 [3,]    2    0    1
+
 > cacheSolve(a)
      [,1] [,2] [,3]
 [1,]    0  0.5    0
 [2,]    1 -1.0    0
 [3,]    0 -1.0    1
+
 > cacheSolve(a)
+
 cached value available and hence getting cached data
      [,1] [,2] [,3]
 [1,]    0  0.5    0
